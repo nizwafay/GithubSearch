@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region Typography-->
+    <style name="TextView" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="TextView.20">
+        <item name="android:textSize">@dimen/font_size_20</item>
+        <item name="lineHeight">@dimen/line_height_font_20</item>
+    </style>
+
+    <style name="TextView.20.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.16">
+        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="lineHeight">@dimen/line_height_font_16</item>
+    </style>
+
+    <style name="TextView.16.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.14">
+        <item name="android:textSize">@dimen/font_size_14</item>
+        <item name="lineHeight">@dimen/line_height_font_14</item>
+    </style>
+
+    <style name="TextView.14.Regular">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextView.14.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.10">
+        <item name="android:textSize">@dimen/font_size_10</item>
+        <item name="lineHeight">@dimen/line_height_font_10</item>
+    </style>
+
+    <style name="TextView.10.Regular">
+        <item name="android:textStyle">normal</item>
+    </style>
+    <!--endregion-->
+</resources>
