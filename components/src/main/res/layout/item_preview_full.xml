@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/margin_24"
+    android:paddingVertical="@dimen/margin_16">
+
+    <com.example.components.textview.impls.TextView16Bold
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Wang Shi Eun" />
+
+    <com.example.components.textview.impls.TextView10Regular
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_8"
+        android:textColor="@color/black_medium"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toEndOf="@id/tvTitle"
+        app:layout_constraintTop_toTopOf="@id/tvTitle"
+        tools:text="\@wangshieun" />
+
+    <com.example.components.textview.impls.TextView14Regular
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_4"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        tools:text="Director of Netshare Company" />
+
+    <com.example.components.textview.impls.TextView10Regular
+        android:id="@+id/tvFooter1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_12"
+        android:drawablePadding="@dimen/margin_4"
+        android:textColor="@color/black_soft"
+        app:drawableTint="#333333"
+        app:layout_constraintStart_toStartOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        tools:text="Taipei, Taiwan" />
+
+    <com.example.components.textview.impls.TextView10Regular
+        android:id="@+id/tvFooter2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_16"
+        android:textColor="@color/black_soft"
+        app:layout_constraintBottom_toBottomOf="@id/tvFooter1"
+        app:layout_constraintStart_toEndOf="@id/tvFooter1"
+        app:layout_constraintTop_toTopOf="@id/tvFooter1"
+        tools:text="wangshi@mihoyo.com" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
