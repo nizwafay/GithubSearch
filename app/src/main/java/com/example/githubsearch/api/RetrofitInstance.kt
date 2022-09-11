@@ -7,18 +7,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInstance {
     companion object {
-        private val retrofit: Retrofit by lazy {
+        fun createInstance(): Retrofit {
             val client = OkHttpClient.Builder()
                 .build()
-            Retrofit.Builder()
+            return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
-        }
-
-        fun createUserRetrofit(): UserRetrofit {
-            return retrofit.create(UserRetrofit::class.java)
         }
     }
 }

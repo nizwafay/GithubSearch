@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -56,4 +57,12 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
 
     implementation "androidx.paging:paging-runtime:$paging_version"
+
+    implementation "com.google.dagger:hilt-android:$dagger_hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_hilt_version"
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
