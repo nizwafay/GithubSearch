@@ -44,6 +44,7 @@ dependencies {
 
     def retrofit_version = "2.9.0"
     def room_version = "2.5.0-alpha03"
+    def paging_version = "3.1.1"
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -53,4 +54,6 @@ dependencies {
     implementation "androidx.room:room-paging:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    implementation "androidx.paging:paging-runtime:$paging_version"
 }
