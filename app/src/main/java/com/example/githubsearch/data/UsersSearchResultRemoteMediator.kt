@@ -135,6 +135,6 @@ class UsersSearchResultRemoteMediator(
     }
 
     companion object {
-        const val PAGINATION_STARTING_INDEX = PAGINATION_STARTING_PAGE_DEFAULT
+        private const val PAGINATION_STARTING_INDEX = PAGINATION_STARTING_PAGE_DEFAULT
     }
 }
