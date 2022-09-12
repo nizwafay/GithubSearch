@@ -6,11 +6,11 @@
 
     <fragment
         android:id="@+id/userDetailFragment"
-        android:name="com.example.githubsearch.ui.fragments.UserDetailFragment"
+        android:name="com.example.githubsearch.ui.screen.userdetail.UserDetailFragment"
         android:label="UserDetailFragment" />
     <fragment
         android:id="@+id/usersSearchFragment"
-        android:name="com.example.githubsearch.ui.fragments.UsersSearchFragment"
+        android:name="com.example.githubsearch.ui.screen.userssearch.UsersSearchFragment"
         android:label="UsersSearchFragment">
         <action
             android:id="@+id/action_usersSearchFragment_to_userDetailFragment"

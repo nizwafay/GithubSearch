@@ -1,4 +1,4 @@
-package com.example.githubsearch.ui.fragments
+package com.example.githubsearch.ui.screen.userdetail
 
 import androidx.fragment.app.Fragment
 import com.example.githubsearch.R
