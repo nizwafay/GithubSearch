@@ -6,8 +6,9 @@ import com.example.domain.model.User
 import com.example.githubsearch.api.UserRetrofit
 import com.example.githubsearch.dto.asDomainModel
 import com.example.githubsearch.dto.asListOfUsersUsername
+import javax.inject.Inject
 
-class UserApiImpl(private val userRetrofit: UserRetrofit) : UserApi {
+class UserApiImpl @Inject constructor(private val userRetrofit: UserRetrofit) : UserApi {
     override suspend fun searchUsers(
         searchQuery: String,
         pageNumber: Int,
