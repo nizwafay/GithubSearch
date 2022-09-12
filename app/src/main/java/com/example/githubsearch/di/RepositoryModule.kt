@@ -1,7 +1,7 @@
 package com.example.githubsearch.di
 
-import com.example.domain.datasource.remote.UserRemoteDataSource
 import com.example.githubsearch.data.UserRepository
+import com.example.githubsearch.data.datasource.remote.UserRemoteDataSource
 import com.example.githubsearch.database.GithubSearchDatabase
 import dagger.Module
 import dagger.Provides

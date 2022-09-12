@@ -42,8 +42,12 @@ dependencies {
     api 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     def nav_version = "2.5.2"
+    def paging_version = "3.1.1"
+
     api "androidx.navigation:navigation-fragment-ktx:$nav_version"
     api "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    api "androidx.paging:paging-runtime:$paging_version"
 
     testApi 'junit:junit:4.13.2'
     androidTestApi 'androidx.test.ext:junit:1.1.3'

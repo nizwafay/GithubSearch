@@ -1,8 +1,10 @@
-package com.example.domain.datasource.remote
+package com.example.githubsearch.data.datasource.remote
 
+import com.example.domain.datasource.remote.UserApi
 import com.example.domain.model.User
+import javax.inject.Inject
 
-class UserRemoteDataSource(private val userApi: UserApi) {
+class UserRemoteDataSource @Inject constructor(private val userApi: UserApi) {
     suspend fun searchUsers(searchQuery: String, pageNumber: Int, pageSize: Int): List<User> {
         val usersUsername: List<String> = userApi.searchUsers(
             searchQuery = searchQuery,
