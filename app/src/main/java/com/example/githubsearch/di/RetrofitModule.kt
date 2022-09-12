@@ -1,10 +1,12 @@
 package com.example.githubsearch.di
 
+import android.content.Context
 import com.example.githubsearch.api.RetrofitInstance
 import com.example.githubsearch.api.UserRetrofit
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import javax.inject.Singleton
@@ -14,8 +16,8 @@ import javax.inject.Singleton
 object RetrofitModule {
     @Singleton
     @Provides
-    fun provideRetrofitInstance(): Retrofit {
-        return RetrofitInstance.createInstance()
+    fun provideRetrofitInstance(@ApplicationContext context: Context): Retrofit {
+        return RetrofitInstance.createInstance(context)
     }
 
     @Singleton
