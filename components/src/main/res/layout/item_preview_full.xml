@@ -4,15 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="@dimen/margin_24"
-    android:paddingVertical="@dimen/margin_16">
+    android:paddingHorizontal="@dimen/padding_24"
+    android:paddingVertical="@dimen/padding_16">
+
+    <ImageView
+        android:id="@+id/ivProfilePicture"
+        android:layout_width="@dimen/rounded_icon_size_small"
+        android:layout_height="@dimen/rounded_icon_size_small"
+        android:contentDescription="Profile Picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.components.textview.impls.TextView16Bold
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/margin_8"
+        app:layout_constraintStart_toEndOf="@id/ivProfilePicture"
+        app:layout_constraintTop_toTopOf="@id/ivProfilePicture"
         tools:text="Wang Shi Eun" />
 
     <com.example.components.textview.impls.TextView10Regular
@@ -28,7 +37,7 @@
 
     <com.example.components.textview.impls.TextView14Regular
         android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_4"
         app:layout_constraintStart_toStartOf="@id/tvTitle"
