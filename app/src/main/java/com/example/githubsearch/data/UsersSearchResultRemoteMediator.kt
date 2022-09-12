@@ -5,8 +5,9 @@ import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
 import androidx.room.withTransaction
-import com.example.domain.datasource.remote.UserRemoteDataSource
 import com.example.domain.model.User
+import com.example.githubsearch.api.IN_QUALIFIER
+import com.example.githubsearch.data.datasource.remote.UserRemoteDataSource
 import com.example.githubsearch.database.GithubSearchDatabase
 import com.example.githubsearch.database.model.UserEntity
 import com.example.githubsearch.database.model.UsersSearchResultRemoteKeyEntity
@@ -62,8 +63,21 @@ class UsersSearchResultRemoteMediator(
         }
 
         try {
+            // somehow github api can accept empty query, doesn't like it.
+            if (searchQuery.isEmpty()) {
+                with(githubSearchDatabase) {
+                    withTransaction {
+                        usersSearchResultRemoteKeysDao().clearData()
+                        userDao().clearData()
+                    }
+                }
+                return MediatorResult.Success(endOfPaginationReached = true)
+            }
+
+            val queryWithInQualifier = searchQuery + IN_QUALIFIER
+
             val searchUsersResult: List<User> = userRemoteDataSource.searchUsers(
-                searchQuery = searchQuery,
+                searchQuery = queryWithInQualifier,
                 pageNumber = page,
                 pageSize = state.config.pageSize
             )

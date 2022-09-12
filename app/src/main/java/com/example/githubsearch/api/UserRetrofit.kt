@@ -6,6 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+const val IN_QUALIFIER = "in:name"
+
 interface UserRetrofit {
     @GET("search/users")
     suspend fun searchForUsers(
