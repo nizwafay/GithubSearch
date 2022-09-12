@@ -6,9 +6,9 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.map
-import com.example.domain.datasource.remote.UserRemoteDataSource
 import com.example.domain.model.Repo
 import com.example.domain.model.User
+import com.example.githubsearch.data.datasource.remote.UserRemoteDataSource
 import com.example.githubsearch.database.GithubSearchDatabase
 import com.example.githubsearch.database.model.UserEntity
 import com.example.githubsearch.dto.asDomainModel
@@ -17,10 +17,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 // Doesn't know how to make abstraction of "PagingData" without adding "androidx.paging" dependency to domain module.
 // So, I decided to not create abstraction of this repository.
-class UserRepository(
+class UserRepository @Inject constructor(
     private val userRemoteDataSource: UserRemoteDataSource,
     // Doesn't know how to make abstraction of "Value" data type of "PagingSource<Key, Value>".
     // So, I decided to not create abstraction of this local data source.
@@ -30,7 +31,7 @@ class UserRepository(
     suspend fun searchUsers(searchQuery: String): Flow<PagingData<User>> {
         return withContext(Dispatchers.IO) {
             val pagingSourceFactory: () -> PagingSource<Int, UserEntity> = {
-                githubSearchDatabase.userDao().getUsersByUsername(username = searchQuery)
+                githubSearchDatabase.userDao().getUsers()
             }
 
             @OptIn(ExperimentalPagingApi::class)
@@ -61,7 +62,7 @@ class UserRepository(
     }
 
     companion object {
-        private const val PAGINATION_PAGE_SIZE = 5
+        private const val PAGINATION_PAGE_SIZE = 10
         private const val PAGINATION_INITIAL_LOAD_SIZE = PAGINATION_PAGE_SIZE * 2
         private const val PAGINATION_PREFETCH_DISTANCE = PAGINATION_PREFETCH_DISTANCE_DEFAULT
     }
