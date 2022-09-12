@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.bumptech.glide.Glide
 import com.example.components.databinding.ItemPreviewFullBinding
 
 open class ItemPreviewFull : ConstraintLayout {
@@ -18,6 +19,15 @@ open class ItemPreviewFull : ConstraintLayout {
             true
         )
     }
+
+    var photoUrl: String? = null
+        set(value) {
+            field = value
+            Glide.with(this)
+                .load(value)
+                .circleCrop()
+                .into(binding.ivProfilePicture)
+        }
 
     var title: String? = null
         set(value) {
